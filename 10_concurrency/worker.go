@@ -12,3 +12,16 @@ func worker(id int, wg *sync.WaitGroup) {
     time.Sleep(1 * time.Second)
     fmt.Println("Worker", id, "done")
 }
+func main() {
+    fmt.Println("--- TOPIC: WORKERS ---")
+    var wg sync.WaitGroup
+
+    numWorkers := 5
+    for i := 1; i <= numWorkers; i++ {
+        wg.Add(1)
+        go worker(i, &wg)
+    }
+
+    wg.Wait()
+    fmt.Println("All workers finished.")
+}

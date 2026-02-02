@@ -7,6 +7,6 @@ func main() {
     age := 25
     const pi = 3.14159
 
-    fmt.Printf("%s is %d years old.\n", name, age)
-    fmt.Println("Pi =", pi)
+    fmt.Printf("%s is %d years old.\n", name, age) // Printf allows formatted strings
+    fmt.Println("Pi =", pi) // Println adds a newline automatically
 }
